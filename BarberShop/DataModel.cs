@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Barbershop
 {
+
     /// <sumary>
     /// Клиенты
     /// </sumary>
@@ -18,13 +19,13 @@ namespace Barbershop
         /// </summary>
         public DateTime Birthday { get; set; }
         /// <summary>
-        /// История заказов
-        /// </summary>
-        public List<OrderHistory> OrderHistory { get; set; }
-        /// <summary>
         /// Фотография клиента
         /// </summary>
         public byte[] Photo { get; set; }
+        /// <summary>
+        /// Номер телефона
+        /// </summary>
+        public string PhoneNumber { get; set; }
     }
 
     /// <summary>
@@ -35,11 +36,7 @@ namespace Barbershop
         /// <summary>
         /// Тип услуги
         /// </summary>
-        public TypeService TypeService { get; set; }
-        /// <summary>
-        /// Услуга
-        /// </summary>
-        public string Service { get; set; }
+        public List<TypeService> TypeService { get; set; }
         /// <summary>
         /// Парикмахер
         /// </summary>
@@ -120,9 +117,9 @@ namespace Barbershop
     }
 
     /// <sumary>
-    /// История заказов
+    /// Запись к барберу
     /// </sumary>
-    public class OrderHistory
+    public class Appointment
     {
         /// <summary>
         /// Дата посещения
@@ -131,6 +128,10 @@ namespace Barbershop
         /// <summary>
         /// Описание услуги
         /// </summary>
-        public string Description { get; set; }
+        public List<TypeService> Service { get; set; }
+        /// <summary>
+        /// Данные клиента
+        /// </summary>
+        public Client ClientData { get; set; }
     }
 }

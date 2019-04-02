@@ -7,7 +7,6 @@ namespace Barbershop
     /// <sumary>
     /// Клиенты
     /// </sumary>
-
     public class Client
     {
         /// <summary>
@@ -27,30 +26,75 @@ namespace Barbershop
         /// </summary>
         public string PhoneNumber { get; set; }
     }
-
-    /// <summary>
-    /// Прайс лист
-    /// </summary>
-    public class PriceList
+    /// <sumary>
+    /// Запись к барберу
+    /// </sumary>
+    public class Appointment
     {
         /// <summary>
-        /// Тип услуги
+        /// Дата посещения
         /// </summary>
-        public List<TypeService> TypeService { get; set; }
+        public DateTime VisitDate { get; set; }
         /// <summary>
-        /// Парикмахер
+        /// Описание услуги
         /// </summary>
-        public string Barber { get; set; }
+        public List<TypeService> Service { get; set; }
         /// <summary>
-        /// Цена услуги
+        /// Данные клиента
         /// </summary>
-        public double Price { get; set; }
+        public Client ClientData { get; set; }
+        /// <summary>
+        /// Сотрудники
+        /// </summary>
+        public class Workers
+        {
+            /// <summary>
+            /// Индивидуальный номер
+            /// </summary>
+            public int IndividualNumber { get; set; }
+            /// <summary>
+            /// ФИО
+            /// </summary>
+            public string WorkerName { get; set; }
+            /// <summary>
+            /// Должность
+            /// </summary>
+            public string Position { get; set; }
+            /// <summary>
+            /// Дата приема на работу
+            /// </summary>
+            public DateTime StartDate { get; set; }
+            /// <summary>
+            /// Адрес
+            /// </summary>
+            public string Address { get; set; }
+            /// <summary>
+            /// Фотография барбера
+            /// </summary>
+            public byte[] Photo { get; set; }
+        }
+        /// <summary>
+        /// Прайс лист
+        /// </summary>
+        public class PriceList
+        {
+            /// <summary>
+            /// Тип услуги
+            /// </summary>
+            public List<TypeService> TypeService { get; set; }
+            /// <summary>
+            /// Парикмахер
+            /// </summary>
+            public string Barber { get; set; }
+            /// <summary>
+            /// Цена услуги
+            /// </summary>
+            public double Price { get; set; }
+        }
     }
-
     /// <summary>
     /// Тип услуги
     /// </summary>
-
     public enum TypeService
     {
         /// <summary>
@@ -81,57 +125,5 @@ namespace Barbershop
         /// Премиум бритье
         /// </summary>
         PremiumShave,
-    }
-
-    /// <summary>
-    /// Сотрудники
-    /// </summary>
-    public class Workers
-    {
-        /// <summary>
-        /// Индивидуальный номер
-        /// </summary>
-        public int IndividualNumber { get; set; }
-        /// <summary>
-        /// ФИО
-        /// </summary>
-        public string WorkerName { get; set; }
-        /// <summary>
-        /// Должность
-        /// </summary>
-        public string Position { get; set; }
-        /// <summary>
-        /// Дата приема на работу
-        /// </summary>
-        public DateTime StartDate { get; set; }
-        /// <summary>
-        /// Адрес
-        /// </summary>
-        public string Address { get; set; }
-        /// <summary>
-        /// Фотография клиента
-        /// </summary>
-        public byte[] Photo { get; set; }
-
-
-    }
-
-    /// <sumary>
-    /// Запись к барберу
-    /// </sumary>
-    public class Appointment
-    {
-        /// <summary>
-        /// Дата посещения
-        /// </summary>
-        public DateTime VisitDate { get; set; }
-        /// <summary>
-        /// Описание услуги
-        /// </summary>
-        public List<TypeService> Service { get; set; }
-        /// <summary>
-        /// Данные клиента
-        /// </summary>
-        public Client ClientData { get; set; }
     }
 }
